@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acharya Guru Ji — Relationship Consultation UK & Canada</title>
+<meta name="description" content="Confidential relationship consultation with Acharya Guru Ji. 15+ years guiding couples through breakup, marriage, divorce and family opposition across the UK & Canada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --ink:#1B1210;
+    --ink-soft:#241714;
+    --maroon:#2E1518;
+    --rose:#A94A4A;
+    --rose-light:#C1615F;
+    --rose-dim:#7d3a3a;
+    --gold:#C9A15A;
+    --gold-soft:#E4C989;
+    --cornsilk:#FFF6DA;
+    --cornsilk-dim:#F2E6C4;
+    --cream-text:#EFE2C8;
+    --line:rgba(233,208,158,0.14);
+    --radius-s:10px;
+    --radius-m:16px;
+    --radius-l:26px;
+    --container:1180px;
+    --shadow:0 20px 50px -20px rgba(0,0,0,0.55);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--cream-text);
+    font-family:'Manrope',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:500;color:var(--cornsilk);letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:700;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-soft);
+    margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:20px;height:1px;background:var(--gold-soft);}
+  section{position:relative;padding:96px 0;}
+  @media(max-width:768px){section{padding:64px 0;}}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:16px 30px;border-radius:100px;font-weight:700;font-size:15px;
+    cursor:pointer;border:1px solid transparent;transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:linear-gradient(135deg,#25D366,#1EBE59);color:#fff;box-shadow:0 14px 30px -10px rgba(37,211,102,0.55);}
+  .btn-primary:hover{box-shadow:0 18px 36px -8px rgba(37,211,102,0.7);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;border-color:rgba(233,208,158,0.35);color:var(--cornsilk);}
+  .btn-ghost:hover{border-color:var(--gold-soft);background:rgba(233,208,158,0.06);}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),#B98B3E);color:#241505;box-shadow:0 14px 30px -10px rgba(201,161,90,0.5);}
+  .btn-gold:hover{transform:translateY(-2px);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:16px 0;background:rgba(27,18,16,0.7);backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:border-color .3s, background .3s;
+  }
+  header.scrolled{border-color:var(--line);background:rgba(27,18,16,0.92);}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:20px;color:var(--cornsilk);}
+  .logo .mark{
+    width:38px;height:38px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%,var(--gold-soft),var(--rose) 70%);
+    display:flex;align-items:center;justify-content:center;font-size:16px;color:#1B1210;
+  }
+  nav.links{display:flex;gap:34px;font-size:14.5px;font-weight:600;}
+  nav.links a{opacity:.85;position:relative;padding:4px 0;}
+  nav.links a:hover{opacity:1;}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-cta .btn{padding:11px 22px;font-size:13.5px;}
+  .burger{display:none;font-size:22px;color:var(--cornsilk);background:none;border:none;cursor:pointer;}
+  @media(max-width:900px){
+    nav.links{display:none;}
+    .burger{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:150px 0 90px;position:relative;overflow:hidden;}
+  .hero-bg{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(ellipse 700px 500px at 85% -5%, rgba(169,74,74,0.35), transparent 60%),
+      radial-gradient(ellipse 600px 500px at 5% 20%, rgba(201,161,90,0.14), transparent 60%);
+  }
+  .orbit-svg{position:absolute;top:-120px;right:-160px;width:640px;height:640px;opacity:.5;z-index:0;pointer-events:none;}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 0.85fr;gap:64px;align-items:center;}
+  @media(max-width:980px){.hero .wrap{grid-template-columns:1fr;gap:48px;}}
+  .trust-pill{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;
+    background:rgba(233,208,158,0.08);border:1px solid var(--line);font-size:13px;font-weight:700;
+    color:var(--gold-soft);margin-bottom:22px;
+  }
+  .hero h1{font-size:clamp(34px,4.6vw,58px);line-height:1.06;margin-bottom:20px;}
+  .hero h1 em{font-style:italic;color:var(--rose-light);background:linear-gradient(135deg,var(--gold-soft),var(--rose-light));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero p.lead{font-size:17.5px;color:rgba(239,226,200,0.82);max-width:530px;margin-bottom:34px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px;}
+  .hero-stats{display:flex;gap:34px;flex-wrap:wrap;}
+  .hero-stats div{border-left:2px solid var(--rose);padding-left:14px;}
+  .hero-stats .num{font-family:'Fraunces',serif;font-size:26px;color:var(--cornsilk);display:block;}
+  .hero-stats .lbl{font-size:12.5px;color:rgba(239,226,200,0.65);text-transform:uppercase;letter-spacing:.06em;}
+
+  .hero-visual{position:relative;}
+  .hero-photo-card{
+    position:relative;border-radius:var(--radius-l);overflow:hidden;
+    background:linear-gradient(160deg,#3a1f22,#221213);border:1px solid var(--line);
+    box-shadow:var(--shadow);aspect-ratio:4/5;
+  }
+  .hero-photo-card .ph-inner{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:14px;text-align:center;color:rgba(239,226,200,0.45);padding:30px;
+  }
+  .hero-photo-card .ph-inner i{font-size:34px;color:var(--gold-soft);opacity:.8;}
+  .hero-photo-card img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;}
+  .float-card{
+    position:absolute;left:-18px;bottom:24px;background:rgba(27,18,16,0.92);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:var(--radius-m);padding:16px 20px;max-width:250px;box-shadow:var(--shadow);
+  }
+  .float-card .t{font-weight:800;color:var(--cornsilk);font-size:14.5px;margin-bottom:2px;}
+  .float-card .s{font-size:12.5px;color:rgba(239,226,200,0.65);}
+  .badge-corner{
+    position:absolute;top:22px;right:-14px;background:linear-gradient(135deg,var(--gold),#B98B3E);
+    color:#241505;font-weight:800;font-size:12px;padding:9px 16px;border-radius:100px;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:6px;
+  }
+
+  /* marquee */
+  .marquee-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(233,208,158,0.03);overflow:hidden;padding:16px 0;}
+  .marquee{display:flex;gap:46px;white-space:nowrap;animation:scroll 32s linear infinite;width:max-content;}
+  .marquee span{font-size:13.5px;font-weight:700;color:var(--gold-soft);letter-spacing:.02em;display:flex;align-items:center;gap:10px;}
+  .marquee span i{font-size:6px;color:var(--rose-light);}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ---------- SECTION HEAD ---------- */
+  .sec-head{max-width:640px;margin-bottom:52px;}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .sec-head h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;}
+  .sec-head p{color:rgba(239,226,200,0.72);font-size:15.5px;margin-top:14px;}
+
+  /* ---------- PROBLEMS ---------- */
+  .problems-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  @media(max-width:760px){.problems-grid{grid-template-columns:1fr;}}
+  .p-card{
+    display:flex;align-items:center;gap:16px;background:var(--ink-soft);
+    border:1px solid var(--line);border-left:3px solid var(--rose);
+    border-radius:var(--radius-m);padding:20px 20px;transition:transform .25s ease, border-color .25s ease, background .25s ease;
+    cursor:pointer;
+  }
+  .p-card:hover{transform:translateY(-3px);border-left-color:var(--gold);background:rgba(233,208,158,0.05);}
+  .p-card .ic{
+    flex:none;width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,rgba(169,74,74,0.35),rgba(201,161,90,0.2));color:var(--gold-soft);font-size:19px;
+  }
+  .p-card .body{flex:1;}
+  .p-card h4{font-family:'Manrope',sans-serif;font-weight:800;font-size:15.5px;color:var(--cornsilk);margin-bottom:4px;}
+  .p-card p{font-size:13.5px;color:rgba(239,226,200,0.65);}
+  .p-card .arrow{flex:none;color:var(--rose-light);font-size:15px;transition:transform .25s ease;}
+  .p-card:hover .arrow{transform:translateX(4px);color:var(--gold-soft);}
+  .p-card.span2{grid-column:1/-1;}
+  .problems-cta{text-align:center;margin-top:30px;}
+  .problems-cta a{font-weight:700;font-size:14.5px;color:var(--gold-soft);border-bottom:1px solid var(--gold-soft);padding-bottom:2px;}
+
+  /* ---------- MENTOR ---------- */
+  .mentor{background:linear-gradient(180deg,var(--maroon),var(--ink));}
+  .mentor .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:70px;align-items:center;}
+  @media(max-width:980px){.mentor .wrap{grid-template-columns:1fr;gap:42px;}}
+  .mentor-visual{position:relative;}
+  .mentor-main{
+    position:relative;border-radius:var(--radius-l);overflow:hidden;aspect-ratio:3/3.6;
+    background:linear-gradient(160deg,#3a1f22,#221213);border:1px solid var(--line);box-shadow:var(--shadow);
+  }
+  .mentor-main .ph-inner{position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;color:rgba(239,226,200,0.4);text-align:center;padding:30px;}
+  .mentor-main .ph-inner i{font-size:36px;color:var(--gold-soft);opacity:.8;}
+  .mentor-main img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;}
+  .mentor-main .tag{
+    position:absolute;left:18px;bottom:18px;right:18px;background:rgba(27,18,16,0.85);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 16px;
+  }
+  .mentor-main .tag .t{font-weight:800;color:var(--cornsilk);font-size:14px;}
+  .mentor-main .tag .s{font-size:12px;color:rgba(239,226,200,0.65);margin-top:2px;}
+  .selector-row{display:flex;gap:12px;margin-top:16px;}
+  .selector-card{
+    flex:1;display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;
+    background:var(--ink-soft);border:1px solid var(--line);cursor:pointer;transition:border-color .2s, background .2s;
+  }
+  .selector-card.active,.selector-card:hover{border-color:var(--gold-soft);background:rgba(201,161,90,0.08);}
+  .selector-card .thumb{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--rose-dim),var(--maroon));flex:none;display:flex;align-items:center;justify-content:center;color:var(--gold-soft);font-size:14px;overflow:hidden;}
+  .selector-card .thumb img{width:100%;height:100%;object-fit:cover;display:none;}
+  .selector-card .lbl b{display:block;font-size:12.5px;color:var(--cornsilk);font-weight:800;}
+  .selector-card .lbl span{font-size:11px;color:rgba(239,226,200,0.55);}
+
+  .mentor-content .verify{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.35);color:#7BE6A3;padding:7px 14px;border-radius:100px;font-size:12.5px;font-weight:700;margin-bottom:20px;}
+  .mentor-content h2{font-size:clamp(28px,3.2vw,38px);margin-bottom:6px;}
+  .mentor-content .role{color:var(--gold-soft);font-weight:700;font-size:14px;margin-bottom:18px;}
+  .mentor-content p.bio{color:rgba(239,226,200,0.78);font-size:15.5px;margin-bottom:16px;}
+  .mentor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0 32px;}
+  .mentor-stats .st{background:var(--ink-soft);border:1px solid var(--line);border-radius:var(--radius-s);padding:16px 12px;text-align:center;}
+  .mentor-stats .st .num{font-family:'Fraunces',serif;font-size:24px;color:var(--gold-soft);}
+  .mentor-stats .st .lbl{font-size:11.5px;color:rgba(239,226,200,0.6);margin-top:2px;text-transform:uppercase;letter-spacing:.04em;}
+
+  /* ---------- PROCESS ---------- */
+  .process-list{position:relative;max-width:760px;margin:0 auto;}
+  .process-item{display:flex;gap:26px;padding-bottom:44px;position:relative;}
+  .process-item:last-child{padding-bottom:0;}
+  .process-item::before{content:"";position:absolute;left:27px;top:60px;bottom:0;width:1px;background:linear-gradient(var(--rose),transparent);}
+  .process-item:last-child::before{display:none;}
+  .process-num{
+    flex:none;width:56px;height:56px;border-radius:50%;border:1px solid var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-style:italic;
+    font-size:18px;color:var(--gold-soft);background:var(--ink);
+  }
+  .process-item h4{font-size:19px;margin-bottom:6px;}
+  .process-item p{color:rgba(239,226,200,0.68);font-size:14.5px;max-width:480px;}
+
+  /* ---------- REVIEWS ---------- */
+  .rev-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:44px;}
+  .rev-tab{
+    padding:12px 28px;border-radius:100px;border:1px solid var(--line);font-weight:700;font-size:14px;
+    cursor:pointer;color:rgba(239,226,200,0.7);background:var(--ink-soft);transition:all .25s ease;
+  }
+  .rev-tab.active{background:linear-gradient(135deg,var(--rose),var(--rose-dim));color:#fff;border-color:transparent;box-shadow:0 12px 26px -10px rgba(169,74,74,0.55);}
+  .rev-panel{display:none;}
+  .rev-panel.active{display:block;}
+
+  .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media(max-width:980px){.video-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.video-grid{grid-template-columns:1fr;}}
+  .v-card{
+    position:relative;border-radius:var(--radius-m);overflow:hidden;aspect-ratio:9/16;background:var(--ink-soft);
+    border:1px solid var(--line);cursor:pointer;
+  }
+  .v-card iframe{width:100%;height:100%;border:0;position:absolute;inset:0;}
+  .v-card .v-thumb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(169,74,74,0.25),rgba(27,18,16,0.85));}
+  .v-card .v-thumb .play{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;}
+  .v-card .v-label{position:absolute;left:12px;bottom:12px;right:12px;font-size:12.5px;font-weight:700;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.6);}
+
+  .chat-scroller{display:flex;gap:18px;overflow-x:auto;padding:8px 4px 22px;scroll-snap-type:x mandatory;}
+  .chat-scroller::-webkit-scrollbar{height:6px;}
+  .chat-scroller::-webkit-scrollbar-thumb{background:var(--rose-dim);border-radius:10px;}
+  .chat-card{
+    flex:none;width:270px;scroll-snap-align:start;background:var(--ink-soft);border:1px solid var(--line);
+    border-radius:var(--radius-m);overflow:hidden;
+  }
+  .chat-card img{width:100%;display:block;}
+  .quote-scroller{display:flex;gap:18px;overflow-x:auto;padding:8px 4px 8px;scroll-snap-type:x mandatory;}
+  .quote-scroller::-webkit-scrollbar{height:6px;}
+  .quote-scroller::-webkit-scrollbar-thumb{background:var(--rose-dim);border-radius:10px;}
+  .quote-card{
+    flex:none;width:320px;scroll-snap-align:start;background:var(--ink-soft);border:1px solid var(--line);
+    border-radius:var(--radius-m);padding:24px;display:flex;flex-direction:column;gap:14px;
+  }
+  .quote-card .stars{color:var(--gold);font-size:13px;letter-spacing:2px;}
+  .quote-card p.q{font-size:14px;color:rgba(239,226,200,0.82);flex:1;}
+  .quote-card .who{display:flex;align-items:center;gap:10px;margin-top:4px;}
+  .quote-card .who img{width:38px;height:38px;border-radius:50%;object-fit:cover;flex:none;}
+  .quote-card .who b{display:block;font-size:13.5px;color:var(--cornsilk);}
+  .quote-card .who span{font-size:12px;color:rgba(239,226,200,0.55);}
+  .rev-nav{display:flex;gap:10px;justify-content:center;margin-top:6px;}
+  .rev-nav button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--ink-soft);color:var(--cornsilk);cursor:pointer;}
+  .rev-nav button:hover{border-color:var(--gold-soft);}
+
+  /* ---------- WHY US ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:860px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.why-grid{grid-template-columns:1fr;}}
+  .why-card{background:var(--ink-soft);border:1px solid var(--line);border-radius:var(--radius-m);padding:26px 22px;}
+  .why-card i{font-size:22px;color:var(--gold-soft);margin-bottom:14px;display:inline-block;}
+  .why-card h4{font-size:16px;margin-bottom:6px;font-family:'Manrope',sans-serif;font-weight:800;color:var(--cornsilk);}
+  .why-card p{font-size:13.5px;color:rgba(239,226,200,0.65);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{display:flex;align-items:center;justify-content:space-between;padding:22px 4px;cursor:pointer;gap:20px;}
+  .faq-q h4{font-family:'Manrope',sans-serif;font-weight:700;font-size:15.5px;color:var(--cornsilk);}
+  .faq-q i{color:var(--gold-soft);transition:transform .3s ease;flex:none;}
+  .faq-item.open .faq-q i{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .faq-a p{padding:0 4px 22px;font-size:14px;color:rgba(239,226,200,0.68);max-width:640px;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{background:linear-gradient(135deg,var(--rose-dim),var(--maroon) 60%,var(--ink));text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .final-cta .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);padding:8px 16px;border-radius:100px;font-size:12.5px;font-weight:700;color:var(--gold-soft);margin-bottom:20px;}
+  .final-cta h2{font-size:clamp(28px,4vw,42px);max-width:680px;margin:0 auto 16px;}
+  .final-cta p{color:rgba(239,226,200,0.75);max-width:520px;margin:0 auto 34px;font-size:15.5px;}
+  .final-cta .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
+  .final-cta .fine{font-size:12.5px;color:rgba(239,226,200,0.55);}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:64px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:32px;}}
+  .foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  footer p.desc{font-size:13.5px;color:rgba(239,226,200,0.6);max-width:340px;margin-bottom:18px;}
+  .foot-social{display:flex;gap:10px;}
+  .foot-social a{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--cornsilk);transition:border-color .2s;}
+  .foot-social a:hover{border-color:var(--gold-soft);color:var(--gold-soft);}
+  footer h5{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold-soft);margin-bottom:16px;font-family:'Manrope',sans-serif;font-weight:800;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:10px;font-size:13.5px;color:rgba(239,226,200,0.7);}
+  footer li i{width:16px;color:var(--rose-light);margin-right:6px;}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:24px;font-size:12px;color:rgba(239,226,200,0.45);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  .disclaimer{font-size:11.5px;color:rgba(239,226,200,0.4);max-width:900px;margin-top:16px;line-height:1.6;}
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-wa{
+    position:fixed;bottom:22px;right:22px;z-index:200;width:60px;height:60px;border-radius:50%;
+    background:linear-gradient(135deg,#25D366,#1EBE59);display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:26px;box-shadow:0 16px 34px -10px rgba(37,211,102,0.65);
+    animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,0.5);}70%{box-shadow:0 0 0 16px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
+  }
+  :focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#home" class="logo"><span class="mark"><i class="fa-solid fa-om"></i></span>Acharya Guru Ji</a>
+    <nav class="links">
+      <a href="#problems">Problems We Solve</a>
+      <a href="#about">About Guru Ji</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://wa.me/447442217945?text=Hello%20Acharya%20Guru%20Ji%2C%20I%20need%20help%20with%20my%20relationship" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a>
+      <button class="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <svg class="orbit-svg" viewBox="0 0 640 640" fill="none">
+    <circle cx="320" cy="320" r="300" stroke="#C9A15A" stroke-opacity="0.18"/>
+    <circle cx="320" cy="320" r="230" stroke="#A94A4A" stroke-opacity="0.22"/>
+    <circle cx="320" cy="320" r="160" stroke="#C9A15A" stroke-opacity="0.14"/>
+    <circle cx="620" cy="320" r="4" fill="#E4C989"/>
+    <circle cx="320" cy="20" r="3" fill="#C1615F"/>
+    <circle cx="90" cy="150" r="2.5" fill="#E4C989"/>
+  </svg>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="trust-pill"><i class="fa-solid fa-shield-heart"></i> Trusted by 10,000+ clients · UK 🇬🇧 &amp; Canada 🇨🇦</div>
+      <h1>Guiding Hearts Back to <em>Love, Clarity &amp; Peace</em></h1>
+      <p class="lead">Acharya Guru Ji offers confidential, one-to-one relationship consultation for breakup, marriage, divorce and family opposition — personalised guidance to help you understand your situation and find a clear next step.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/447442217945?text=Hello%20Acharya%20Guru%20Ji%2C%20I%20need%20help%20with%20my%20relationship" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Start Free Consultation</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/solutionbreakup" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Connect on Instagram</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="num">10,000+</span><span class="lbl">Happy Clients</span></div>
+        <div><span class="num">15+ Yrs</span><span class="lbl">Experience</span></div>
+        <div><span class="num">4.9 / 5</span><span class="lbl">Client Rating</span></div>
+        <div><span class="num">24 / 7</span><span class="lbl">Availability</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="badge-corner"><i class="fa-solid fa-award"></i> Bharat Shreshtha Ratna 2025</div>
+      <div class="hero-photo-card">
+        <div class="ph-inner"><i class="fa-solid fa-image"></i><span>Add Acharya Guru Ji's main photograph here<br><small>(replace .ph-inner with &lt;img class="real"&gt;)</small></span></div>
+        <img class="real" src="" alt="Acharya Guru Ji, relationship consultant">
+      </div>
+      <div class="float-card">
+        <div class="t">Verified Relationship Consultant</div>
+        <div class="s">100% Confidential · GDPR &amp; PIPEDA compliant</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee" id="marquee"></div>
+</div>
+
+<!-- ============ PROBLEMS ============ -->
+<section id="problems">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What Guru Ji Can Solve</div>
+      <h2>Problems Guru Ji Can Help You Navigate</h2>
+      <p>Every relationship is different. These are the situations clients bring most often — each session is shaped around your specific circumstances.</p>
+    </div>
+    <div class="problems-grid">
+      <div class="p-card">
+        <div class="ic"><i class="fa-solid fa-heart-crack"></i></div>
+        <div class="body"><h4>Breakup &amp; Lost Love</h4><p>Understand what happened and explore a realistic path to reconnect — even if contact has been lost.</p></div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+      </div>
+      <div class="p-card">
+        <div class="ic"><i class="fa-solid fa-rings-wedding"></i></div>
+        <div class="body"><h4>Marriage Problems</h4><p>Rebuild communication, trust and harmony when constant conflict is wearing your marriage down.</p></div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+      </div>
+      <div class="p-card">
+        <div class="ic"><i class="fa-solid fa-file-shield"></i></div>
+        <div class="body"><h4>Stop Divorce</h4><p>Guidance for couples looking to pause and reconsider — even after divorce proceedings have begun.</p></div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+      </div>
+      <div class="p-card">
+        <div class="ic"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="body"><h4>Relationship Balance</h4><p>Work through emotional uncertainty, communication gaps and patterns that keep repeating.</p></div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+      </div>
+      <div class="p-card span2">
+        <div class="ic"><i class="fa-solid fa-people-roof"></i></div>
+        <div class="body"><h4>Family Opposition</h4><p>Practical, respectful guidance for navigating families who haven't yet accepted your relationship.</p></div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+      </div>
+    </div>
+    <div class="problems-cta"><a href="https://wa.me/447442217945" target="_blank" rel="noopener">Not sure which applies to you? Tell Guru Ji your situation →</a></div>
+  </div>
+</section>
+
+<!-- ============ MENTOR ============ -->
+<section class="mentor" id="about">
+  <div class="wrap">
+    <div class="mentor-visual">
+      <div class="mentor-main">
+        <div class="ph-inner"><i class="fa-solid fa-user-large"></i><span>Main profile photograph<br><small>swap in a genuine photo of Acharya Guru Ji</small></span></div>
+        <img class="real" id="mentorMainImg" src="" alt="Acharya Guru Ji">
+        <div class="tag"><div class="t">Relationship Consultant &amp; Love Specialist</div><div class="s">Warm, confidential guidance — UK, Canada &amp; USA</div></div>
+      </div>
+      <div class="selector-row">
+        <div class="selector-card active" data-img="">
+          <div class="thumb"><i class="fa-solid fa-hands-praying"></i><img src=""></div>
+          <div class="lbl"><b>Namaste</b><span>Meet Guru Ji</span></div>
+        </div>
+        <div class="selector-card" data-img="">
+          <div class="thumb"><i class="fa-solid fa-award"></i><img src=""></div>
+          <div class="lbl"><b>Recognition</b><span>Bharat Shreshtha Ratna</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="mentor-content">
+      <div class="verify"><i class="fa-solid fa-circle-check"></i> Verified Relationship Consultant &amp; Mentor</div>
+      <div class="eyebrow">Who Is Acharya Guru Ji</div>
+      <h2>Acharya Guru Ji</h2>
+      <div class="role">Relationship Consultant &amp; Global Love Specialist — London, Canada &amp; USA</div>
+      <p class="bio">With over 15 years of practice, Acharya Guru Ji provides personalised relationship consultation and one-to-one guidance for individuals navigating love, marriage, breakup and relationship challenges across the UK, Canada, USA and beyond.</p>
+      <p class="bio">His approach focuses on understanding relationship dynamics, compatibility and communication patterns — helping clients see their situation clearly and move forward with confidence.</p>
+      <div class="mentor-stats">
+        <div class="st"><div class="num">10,000+</div><div class="lbl">Happy Clients</div></div>
+        <div class="st"><div class="num">15+</div><div class="lbl">Years Experience</div></div>
+        <div class="st"><div class="num">25+</div><div class="lbl">Countries Reached</div></div>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/447442217945" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Consult Guru Ji</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow" style="justify-content:center;">The Process</div>
+      <h2>How the Consultation Works</h2>
+      <p>A simple, private path from your first message to real clarity.</p>
+    </div>
+    <div class="process-list">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <div><h4>Start on WhatsApp</h4><p>Send a message and briefly explain what's going on. Every conversation stays completely private.</p></div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <div><h4>Share Your Situation</h4><p>Guru Ji listens to the full picture — your relationship history, the current conflict and what you're hoping for.</p></div>
+      </div>
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <div><h4>Get Personalised Guidance</h4><p>Receive a clear, practical plan for your next step — built around your specific circumstances, not generic advice.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow" style="justify-content:center;">Real Client Reviews</div>
+      <h2>Lives Transformed — In Their Own Words</h2>
+      <p>Genuine stories from clients across the UK and Canada.</p>
+    </div>
+    <div class="rev-tabs">
+      <div class="rev-tab active" data-tab="video">Video Reviews</div>
+      <div class="rev-tab" data-tab="chat">Chat Reviews</div>
+    </div>
+
+    <div class="rev-panel active" id="panel-video">
+      <div class="video-grid">
+        <div class="v-card" data-yt="rEKe_hckR-s">
+          <div class="v-thumb"><div class="play"><i class="fa-solid fa-play"></i></div></div>
+          <div class="v-label">"I got my ex back in 21 days" — Emily, UK</div>
+        </div>
+        <div class="v-card" data-yt="md5ZiP_q3IY">
+          <div class="v-thumb"><div class="play"><i class="fa-solid fa-play"></i></div></div>
+          <div class="v-label">"My marriage was saved" — Jason, Canada</div>
+        </div>
+        <div class="v-card" data-yt="y4YiHWbG-04">
+          <div class="v-thumb"><div class="play"><i class="fa-solid fa-play"></i></div></div>
+          <div class="v-label">Client story — video testimonial</div>
+        </div>
+        <div class="v-card" data-yt="laCedqqXQ_E">
+          <div class="v-thumb"><div class="play"><i class="fa-solid fa-play"></i></div></div>
+          <div class="v-label">"Guidance helped in a difficult time" — Priya</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rev-panel" id="panel-chat">
+      <p style="font-size:13px;color:rgba(239,226,200,0.55);text-align:center;margin-bottom:18px;">Genuine WhatsApp conversations, shared with client permission</p>
+      <div class="chat-scroller" id="chatScroller">
+        <div class="chat-card"><img src="https://acharyagurujiuk.com/assets/Whatsapp%20reviews/Review1.png" alt="WhatsApp review 1" loading="lazy"></div>
+        <div class="chat-card"><img src="https://acharyagurujiuk.com/assets/Whatsapp%20reviews/Review2.png" alt="WhatsApp review 2" loading="lazy"></div>
+        <div class="chat-card"><img src="https://acharyagurujiuk.com/assets/Whatsapp%20reviews/Review3.png" alt="WhatsApp review 3" loading="lazy"></div>
+        <div class="chat-card"><img src="https://acharyagurujiuk.com/assets/Whatsapp%20reviews/Review4.png" alt="WhatsApp review 4" loading="lazy"></div>
+      </div>
+
+      <div class="quote-scroller" id="quoteScroller" style="margin-top:30px;">
+        <div class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p class="q">"I was completely broken after my partner of 4 years left suddenly. Within 3 weeks my partner came back and we are stronger than ever."</p>
+          <div class="who"><img src="https://acharyagurujiuk.com/assets/pp/images.jpg" alt="Emily Richardson" loading="lazy"><div><b>Emily Richardson</b><span>London, UK 🇬🇧</span></div></div>
+        </div>
+        <div class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p class="q">"I was sceptical at first, but after a few days my ex called out of nowhere. Worth every penny — he is the real deal."</p>
+          <div class="who"><img src="https://acharyagurujiuk.com/assets/pp/boy-3.jpg" alt="Jason Mitchell" loading="lazy"><div><b>Jason Mitchell</b><span>Toronto, Canada 🇨🇦</span></div></div>
+        </div>
+        <div class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p class="q">"My marriage was on the edge of divorce — constant fighting, no love left. Guru Ji identified the issue and gave a clear solution."</p>
+          <div class="who"><img src="https://acharyagurujiuk.com/assets/pp/girl-3.jpg" alt="Sarah Khan" loading="lazy"><div><b>Sarah Khan</b><span>Manchester, UK 🇬🇧</span></div></div>
+        </div>
+        <div class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p class="q">"After finding out my partner was cheating I was shattered. Guru Ji gave me real strength and a clear path forward."</p>
+          <div class="who"><img src="https://acharyagurujiuk.com/assets/pp/boy-2.jpg" alt="Raj Patel" loading="lazy"><div><b>Raj Patel</b><span>Vancouver, Canada 🇨🇦</span></div></div>
+        </div>
+        <div class="quote-card">
+          <div class="stars">★★★★★</div>
+          <p class="q">"My parents were completely against our relationship. Through Guru Ji's guidance, they gave their blessing within a month."</p>
+          <div class="who"><img src="https://acharyagurujiuk.com/assets/pp/boy-1.jpg" alt="Michael Tran" loading="lazy"><div><b>Michael Tran</b><span>Calgary, Canada 🇨🇦</span></div></div>
+        </div>
+      </div>
+      <div class="rev-nav">
+        <button aria-label="Scroll left" id="quoteLeft"><i class="fa-solid fa-chevron-left"></i></button>
+        <button aria-label="Scroll right" id="quoteRight"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Why Acharya Guru Ji</div>
+      <h2>What Makes This Different</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><i class="fa-solid fa-user-secret"></i><h4>100% Confidential</h4><p>Your personal details and situation stay private, always.</p></div>
+      <div class="why-card"><i class="fa-solid fa-bolt"></i><h4>Fast Results</h4><p>Most clients see positive shifts within 7–21 days.</p></div>
+      <div class="why-card"><i class="fa-solid fa-earth-europe"></i><h4>UK &amp; Canada Expert</h4><p>Deep understanding of relationship dynamics within UK and Canadian communities.</p></div>
+      <div class="why-card"><i class="fa-solid fa-clock"></i><h4>Available 24/7</h4><p>Relationship problems don't follow a schedule — reach out any time.</p></div>
+      <div class="why-card"><i class="fa-solid fa-heart-circle-check"></i><h4>Personalised Sessions</h4><p>Every session is built around your compatibility, communication and dynamics.</p></div>
+      <div class="why-card"><i class="fa-solid fa-medal"></i><h4>Proven Track Record</h4><p>10,000+ consultations across 25+ countries.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center" style="margin-left:auto;margin-right:auto;">
+      <div class="eyebrow" style="justify-content:center;">FAQ</div>
+      <h2>Common Questions, Answered</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q"><h4>What happens during a relationship consultation?</h4><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>The session begins with a private discussion of your situation, relationship history and current concerns, focusing on understanding the key challenges and possible next steps.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>How fast can I see results?</h4><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Most clients notice positive changes within 7–21 days, though some situations shift in as little as 72 hours depending on complexity.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>Is my information safe and private?</h4><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Absolutely. All consultations are strictly confidential — fully GDPR (UK) and PIPEDA (Canada) compliant. Nothing is shared or stored beyond your session.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>Can Guru Ji help if my ex is with someone else?</h4><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Yes. Breakups, separation and uncertainty about the future are among the most common reasons people seek consultation.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>Do I need to prepare anything beforehand?</h4><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>No special preparation is required — it helps to think about your main concerns and what outcome you'd like from the session.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h4>How do I get started?</h4><i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Simply message Guru Ji on WhatsApp using the button on this page. Available 24/7 — your first consultation is completely free.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta">
+  <div class="wrap">
+    <div class="badge"><i class="fa-solid fa-hourglass-half"></i> Every hour matters</div>
+    <h2>Don't Let Your Loved One Drift Away Forever</h2>
+    <p>The longer you wait, the harder it becomes. Your first consultation is free, private and obligation-free.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://wa.me/447442217945?text=Hello%20Acharya%20Guru%20Ji%2C%20I%20need%20urgent%20help" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp for Instant Help</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/solutionbreakup" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Message on Instagram</a>
+    </div>
+    <div class="fine">Free first consultation · No obligation · 100% private</div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span class="mark" style="width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--gold-soft),var(--rose) 70%);display:flex;align-items:center;justify-content:center;color:#1B1210;"><i class="fa-solid fa-om"></i></span><span style="font-family:'Fraunces',serif;font-size:18px;color:var(--cornsilk);">Acharya Guru Ji</span></div>
+        <p class="desc">Personalised relationship consultation and guidance for individuals navigating love, marriage, breakup and family challenges across the United Kingdom &amp; Canada.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/profile.php?id=61572043106265" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/solutionbreakup" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/447442217945" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/@astroguruji7815" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#problems">Problems We Solve</a></li>
+          <li><a href="#about">About Guru Ji</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><i class="fa-solid fa-phone"></i> UK: +44 79177 39592</li>
+          <li><i class="fa-solid fa-envelope"></i> astroguruju698@gmail.com</li>
+          <li><i class="fa-solid fa-clock"></i> Available 24 / 7</li>
+          <li><i class="fa-solid fa-earth-europe"></i> Serving UK 🇬🇧 &amp; Canada 🇨🇦</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Acharya Guru Ji. All rights reserved.</span>
+      <span>For guidance purposes only. Results may vary.</span>
+    </div>
+    <p class="disclaimer">Disclaimer: There are no guarantees that every person using this service will achieve their desired results — outcomes vary from person to person and depend on multiple factors. Privacy Policy (GDPR &amp; PIPEDA): personal data is collected only when voluntarily provided, never sold or shared, and may be deleted on request at astroguruju698@gmail.com.</p>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/447442217945?text=Hello%20Acharya%20Guru%20Ji%2C%20I%20need%20help" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+
+  // marquee content
+  const marqueeItems = ["10,000+ Happy Clients","4.9 / 5 Star Rating","100% Confidential","UK & Canada Specialist","24/7 Available","15+ Years Experience"];
+  const marqueeEl = document.getElementById('marquee');
+  const buildMarquee = () => { let html=''; for(let r=0;r<2;r++){ marqueeItems.forEach(t=>{ html += `<span><i class="fa-solid fa-circle"></i>${t}</span>`; }); } marqueeEl.innerHTML = html; };
+  buildMarquee();
+
+  // mentor image selector (purely visual state toggle; wire real srcs when photos are added)
+  document.querySelectorAll('.selector-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.selector-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+
+  // review tabs
+  document.querySelectorAll('.rev-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.rev-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.rev-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // video cards -> load iframe on click (perf: no autoplay on load)
+  document.querySelectorAll('.v-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const yt = card.dataset.yt;
+      card.innerHTML = `<iframe src="https://www.youtube.com/embed/${yt}?autoplay=1" title="Client video testimonial" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    });
+  });
+
+  // quote scroller nav
+  const qScroller = document.getElementById('quoteScroller');
+  document.getElementById('quoteLeft').addEventListener('click', () => qScroller.scrollBy({left:-340, behavior:'smooth'}));
+  document.getElementById('quoteRight').addEventListener('click', () => qScroller.scrollBy({left:340, behavior:'smooth'}));
+
+  // faq accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')) a.style.maxHeight = a.scrollHeight + 'px';
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = 0; });
+      if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+</script>
+</body>
+</html>
