@@ -362,3 +362,386 @@ footer li i{width:16px;color:var(--rose-light);margin-right:6px;}
   *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
 }
 :focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px;}
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   GALLERY CAROUSEL
+   Inspired by the uploaded reference image
+========================================= */
+
+#gallery {
+    overflow: hidden;
+}
+
+.gallery-carousel {
+    position: relative;
+
+    width: 100%;
+    height: 420px;
+
+    margin-top: 55px;
+
+    display: flex;
+    align-items: center;
+}
+
+.gallery-viewport {
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.gallery-track {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    width: max-content;
+
+    transition:
+        transform 700ms cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+/* =========================================
+   IMAGE CARD
+========================================= */
+
+.gallery-card {
+    position: relative;
+
+    flex: 0 0 330px;
+
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-l);
+
+    background: var(--ink-soft);
+
+    border: 1px solid var(--line);
+
+    opacity: 0.55;
+
+    transform: scale(0.82);
+
+    filter: brightness(0.62);
+
+    transition:
+        transform 700ms cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        ),
+        opacity 700ms ease,
+        filter 700ms ease,
+        border-color 500ms ease,
+        box-shadow 500ms ease;
+}
+
+
+/* =========================================
+   CENTER IMAGE
+========================================= */
+
+.gallery-card.active {
+    opacity: 1;
+
+    transform: scale(1);
+
+    filter: brightness(1);
+
+    border-color:
+        rgba(201, 161, 90, 0.42);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 900ms ease;
+}
+
+.gallery-card.active img {
+    transform: scale(1.025);
+}
+
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
+
+.gallery-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(27, 18, 16, 0.82),
+            rgba(27, 18, 16, 0.05) 55%,
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.gallery-caption {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 24px;
+
+    text-align: center;
+
+    color: var(--cornsilk);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity 400ms ease,
+        transform 400ms ease;
+}
+
+.gallery-card.active .gallery-caption {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.gallery-control {
+    position: absolute;
+
+    z-index: 10;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    border: 1px solid
+        rgba(201, 161, 90, 0.32);
+
+    background:
+        rgba(27, 18, 16, 0.88);
+
+    color: var(--gold-soft);
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        background 250ms ease,
+        color 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.gallery-control:hover {
+    background: var(--rose);
+
+    border-color: var(--rose);
+
+    color: var(--cornsilk);
+
+    transform:
+        translateY(-50%)
+        scale(1.06);
+}
+
+.gallery-prev {
+    left: 12px;
+}
+
+.gallery-next {
+    right: 12px;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.gallery-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 28px;
+}
+
+.gallery-dot {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(201, 161, 90, 0.25);
+
+    cursor: pointer;
+
+    transition:
+        width 300ms ease,
+        background 300ms ease;
+}
+
+.gallery-dot.active {
+    width: 24px;
+
+    border-radius: 20px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .gallery-carousel {
+        height: 390px;
+    }
+
+    .gallery-card {
+        flex-basis: 300px;
+        height: 330px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .gallery-carousel {
+        height: 330px;
+
+        margin-top: -40px;
+    }
+
+    .gallery-track {
+        gap: 12px;
+    }
+
+    .gallery-card {
+        flex-basis: 280px;
+
+        height: 300px;
+
+        border-radius: 22px;
+    }
+
+    .gallery-card.active {
+        transform: scale(1);
+    }
+
+    .gallery-card:not(.active) {
+        transform: scale(0.82);
+    }
+
+    .gallery-control {
+        width: 38px;
+        height: 38px;
+
+        font-size: 11px;
+    }
+
+    .gallery-prev {
+        left: 7px;
+    }
+
+    .gallery-next {
+        right: 7px;
+    }
+
+    .gallery-caption {
+        padding: 18px;
+        display:none;
+        font-size: 10px;
+    }
+
+}
