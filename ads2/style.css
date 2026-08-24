@@ -536,7 +536,7 @@ section {
     width: 90px;
     height: 90px;
     top: -18px;
-    right: -18px;
+    right: -5px;
     border-left: none;
     border-bottom: none;
 }
@@ -545,7 +545,7 @@ section {
     width: 90px;
     height: 90px;
     bottom: -18px;
-    left: -18px;
+    left: -10px;
     border-right: none;
     border-top: none;
 }
