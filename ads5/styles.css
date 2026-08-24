@@ -80,7 +80,7 @@ nav.links a:hover{opacity:1;}
 }
 
 /* ---------- HERO ---------- */
-.hero{padding:150px 0 90px;position:relative;overflow:hidden;}
+.hero{padding:120px 0 90px;position:relative;overflow:hidden;}
 .hero-bg{
   position:absolute;inset:0;z-index:0;
   background:
@@ -222,6 +222,7 @@ nav.links a:hover{opacity:1;}
   padding:12px 28px;border-radius:100px;border:1px solid var(--line);font-weight:700;font-size:14px;
   cursor:pointer;color:rgba(239,226,200,0.7);background:var(--ink-soft);transition:all .25s ease;
 }
+@media(max-width:400px){.rev-tab{padding:10px 18px;font-size:12px;}}
 .rev-tab.active{background:linear-gradient(135deg,var(--rose),var(--rose-dim));color:#fff;border-color:transparent;box-shadow:0 12px 26px -10px rgba(169,74,74,0.55);}
 .rev-panel{display:none;}
 .rev-panel.active{display:block;}
