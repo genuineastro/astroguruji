@@ -97,6 +97,76 @@ const CONFIG = {
 
 /* ====================================================================== */
 
+
+let GALLERY_ITEMS = [
+  {
+    id: 1,
+    aspect: "tall",
+    bg: "from-emerald-950 via-green-900 to-black",
+    label: "Sacred Yantra Ceremony",
+    img: "https://www.lovespellcaster.uk/gallery/img-c-1.jpg",
+  },
+  {
+    id: 2,
+    aspect: "wide",
+    bg: "from-green-950 via-emerald-900 to-slate-950",
+    label: "Consultation Session",
+    img: "https://www.lovespellcaster.uk/gallery/img-c-2.jpg",
+  },
+  {
+    id: 3,
+    aspect: "square",
+    bg: "from-teal-950 via-green-900 to-black",
+    label: "Vedic Rituals",
+    img: "https://www.lovespellcaster.uk/gallery/img-c-3.jpg",
+  },
+  {
+    id: 4,
+    aspect: "square",
+    bg: "from-slate-950 via-emerald-900 to-green-950",
+    label: "Client Blessings",
+    img: "https://www.lovespellcaster.uk/gallery/img-c-4.jpg",
+  },
+  {
+    id: 5,
+    aspect: "tall",
+    bg: "from-green-950 via-teal-900 to-black",
+    label: "Temple Prayers",
+    img: "https://www.lovespellcaster.uk/gallery/img-c-5.jpg",
+  },
+  {
+    id: 6,
+    aspect: "wide",
+    bg: "from-emerald-950 via-green-800 to-black",
+    label: "Success Ceremony",
+    img: "https://www.lovespellcaster.uk/gallery/img-c-7.jpg",
+  },
+];
+let GALLERY_ITEMS2 = [
+   {
+    id: 1,
+    aspect: "tall",
+    bg: "from-emerald-950 via-green-900 to-black",
+    label: "Sacred Yantra Ceremony",
+    img: "./assets/award1.jpg",
+  },
+   {
+    id: 2,
+    aspect: "tall",
+    bg: "from-emerald-950 via-green-900 to-black",
+    label: "Sacred Yantra Ceremony",
+    img: "./assets/award2.jpg",
+  },
+   {
+    id: 3,
+    aspect: "tall",
+    bg: "from-emerald-950 via-green-900 to-black",
+    label: "Sacred Yantra Ceremony",
+    img: "./assets/award3.jpg",
+  }
+]
+
+
 function waLink(message) {
   const text = encodeURIComponent(message || CONFIG.whatsapp.defaultMessage);
   return `https://wa.me/${CONFIG.whatsapp.number}?text=${text}`;
@@ -121,8 +191,8 @@ function wireStaticLinks() {
     const kind = el.getAttribute("data-wa"); // "default" | "urgent" | "bare"
     const msg =
       kind === "urgent" ? CONFIG.whatsapp.urgentMessage :
-      kind === "bare" ? "" :
-      CONFIG.whatsapp.defaultMessage;
+        kind === "bare" ? "" :
+          CONFIG.whatsapp.defaultMessage;
     el.href = kind === "bare" ? `https://wa.me/${CONFIG.whatsapp.number}` : waLink(msg);
   });
   document.querySelectorAll("[data-ig]").forEach((el) => {
@@ -144,16 +214,6 @@ function buildMarquee() {
     });
   }
   marqueeEl.innerHTML = html;
-}
-
-/* ---------- mentor image selector ---------- */
-function initMentorSelector() {
-  document.querySelectorAll(".selector-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      document.querySelectorAll(".selector-card").forEach((c) => c.classList.remove("active"));
-      card.classList.add("active");
-    });
-  });
 }
 
 /* ---------- review tabs ---------- */
@@ -308,6 +368,215 @@ function initStickyBar() {
   });
 }
 
+/* =========================================================
+   GALLERY SLIDER
+========================================================= */
+function initGallery(galleryItems) {
+  const track = document.getElementById("galleryTrack");
+  const dotsContainer = document.getElementById("galleryDots");
+  const prevButton = document.getElementById("galleryPrev");
+  const nextButton = document.getElementById("galleryNext");
+  const viewport = document.querySelector(".gallery-viewport");
+
+  if (!track || !viewport || !dotsContainer) return;
+
+  let currentIndex = 0;
+  let autoplay = null;
+  let touchStartX = 0;
+
+  /* ---------- RENDER ---------- */
+
+  function renderGallery() {
+    renderCards();
+    renderDots();
+  }
+
+  function renderCards() {
+    track.innerHTML = "";
+
+    galleryItems.forEach((item) => {
+      const card = document.createElement("div");
+      card.className = "gallery-card";
+
+      card.innerHTML = `
+                <img src="${item.img}" alt="${item.label}" loading="lazy">
+                <div class="gallery-caption">${item.label}</div>
+            `;
+
+      track.appendChild(card);
+    });
+  }
+
+  function renderDots() {
+    dotsContainer.innerHTML = "";
+
+    galleryItems.forEach((item, index) => {
+      const dot = document.createElement("button");
+
+      dot.type = "button";
+      dot.className = "gallery-dot";
+      dot.setAttribute("aria-label", `Show gallery image ${index + 1}`);
+
+      dot.addEventListener("click", () => {
+        goToSlide(index);
+        restartAutoplay();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  /* ---------- ELEMENTS ---------- */
+
+  function getCards() {
+    return [...track.querySelectorAll(".gallery-card")];
+  }
+
+  function getDots() {
+    return [...dotsContainer.querySelectorAll(".gallery-dot")];
+  }
+
+  /* ---------- SLIDE ---------- */
+
+  function getSlideOffset(index) {
+    const card = getCards()[index];
+
+    if (!card) return 0;
+
+    const cardCenter =
+      card.offsetLeft + card.offsetWidth / 2;
+
+    return viewport.clientWidth / 2 - cardCenter;
+  }
+
+  function goToSlide(index) {
+    const cards = getCards();
+    const dots = getDots();
+
+    if (!cards.length) return;
+
+    currentIndex =
+      (index + cards.length) % cards.length;
+
+    track.style.transform =
+      `translate3d(${getSlideOffset(currentIndex)}px, 0, 0)`;
+
+    cards.forEach((card, i) => {
+      card.classList.toggle(
+        "active",
+        i === currentIndex
+      );
+    });
+
+    dots.forEach((dot, i) => {
+      dot.classList.toggle(
+        "active",
+        i === currentIndex
+      );
+    });
+  }
+
+  /* ---------- NAVIGATION ---------- */
+
+  function nextSlide() {
+    goToSlide(currentIndex + 1);
+    restartAutoplay();
+  }
+
+  function previousSlide() {
+    goToSlide(currentIndex - 1);
+    restartAutoplay();
+  }
+
+  nextButton?.addEventListener("click", nextSlide);
+  prevButton?.addEventListener("click", previousSlide);
+
+  /* ---------- AUTOPLAY ---------- */
+
+  function startAutoplay() {
+    stopAutoplay();
+
+    if (galleryItems.length <= 1) return;
+
+    autoplay = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, 3500);
+  }
+
+  function stopAutoplay() {
+    if (autoplay) {
+      clearInterval(autoplay);
+      autoplay = null;
+    }
+  }
+
+  function restartAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  /* ---------- SWIPE ---------- */
+
+  function handleTouchStart(event) {
+    touchStartX =
+      event.changedTouches[0].screenX;
+
+    stopAutoplay();
+  }
+
+  function handleTouchEnd(event) {
+    const touchEndX =
+      event.changedTouches[0].screenX;
+
+    const distance =
+      touchStartX - touchEndX;
+
+    if (Math.abs(distance) > 45) {
+      distance > 0
+        ? nextSlide()
+        : previousSlide();
+    } else {
+      restartAutoplay();
+    }
+  }
+
+  viewport.addEventListener(
+    "touchstart",
+    handleTouchStart,
+    { passive: true }
+  );
+
+  viewport.addEventListener(
+    "touchend",
+    handleTouchEnd,
+    { passive: true }
+  );
+
+  /* ---------- RESIZE ---------- */
+
+  window.addEventListener("resize", () => {
+    goToSlide(currentIndex);
+  });
+
+  /* ---------- INITIALIZE ---------- */
+
+  renderGallery();
+  goToSlide(0);
+  startAutoplay();
+}
+
+/* ---------- mentor image selector ---------- */
+function initMentorSelector() {
+  document.querySelectorAll(".selector-card").forEach((card, i) => {
+    card.addEventListener("click", () => {
+      if (i == 0) { initGallery(GALLERY_ITEMS), console.log(i, "ilo") }
+      else { initGallery(GALLERY_ITEMS2) }
+      document.querySelectorAll(".selector-card").forEach((c) => c.classList.remove("active"));
+      card.classList.add("active");
+    });
+  });
+}
+
 /* ---------- boot ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   wireStaticLinks();
@@ -323,355 +592,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initFaqAccordion();
   initStickyCta();
   initStickyBar();
+
+  initGallery(GALLERY_ITEMS);
+
 });
 
 
 
-
-
-
-
-
-
-const GALLERY_ITEMS = [
-    {
-        id: 1,
-        aspect: "tall",
-        bg: "from-emerald-950 via-green-900 to-black",
-        label: "Sacred Yantra Ceremony",
-        img: "https://www.lovespellcaster.uk/gallery/img-c-1.jpg",
-    },
-    {
-        id: 2,
-        aspect: "wide",
-        bg: "from-green-950 via-emerald-900 to-slate-950",
-        label: "Consultation Session",
-        img: "https://www.lovespellcaster.uk/gallery/img-c-2.jpg",
-    },
-    {
-        id: 3,
-        aspect: "square",
-        bg: "from-teal-950 via-green-900 to-black",
-        label: "Vedic Rituals",
-        img: "https://www.lovespellcaster.uk/gallery/img-c-3.jpg",
-    },
-    {
-        id: 4,
-        aspect: "square",
-        bg: "from-slate-950 via-emerald-900 to-green-950",
-        label: "Client Blessings",
-        img: "https://www.lovespellcaster.uk/gallery/img-c-4.jpg",
-    },
-    {
-        id: 5,
-        aspect: "tall",
-        bg: "from-green-950 via-teal-900 to-black",
-        label: "Temple Prayers",
-        img: "https://www.lovespellcaster.uk/gallery/img-c-5.jpg",
-    },
-    {
-        id: 6,
-        aspect: "wide",
-        bg: "from-emerald-950 via-green-800 to-black",
-        label: "Success Ceremony",
-        img: "https://www.lovespellcaster.uk/gallery/img-c-7.jpg",
-    },
-];
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    const track =
-        document.getElementById("galleryTrack");
-
-    const dotsContainer =
-        document.getElementById("galleryDots");
-
-    const prev =
-        document.getElementById("galleryPrev");
-
-    const next =
-        document.getElementById("galleryNext");
-
-    const viewport =
-        document.querySelector(".gallery-viewport");
-
-
-    if (!track || !viewport) return;
-
-
-    let currentIndex = 0;
-
-    let autoplay;
-
-
-    /* =========================================
-       CREATE CARDS
-    ========================================= */
-
-    GALLERY_ITEMS.forEach((item) => {
-
-        const card =
-            document.createElement("div");
-
-        card.className = "gallery-card";
-
-        card.innerHTML = `
-            <img
-                src="${item.img}"
-                alt="${item.label}"
-                loading="lazy"
-            >
-
-            <div class="gallery-caption">
-                ${item.label}
-            </div>
-        `;
-
-        track.appendChild(card);
-
-    });
-
-
-    const cards =
-        [...track.querySelectorAll(".gallery-card")];
-
-
-    /* =========================================
-       CREATE DOTS
-    ========================================= */
-
-    GALLERY_ITEMS.forEach((item, index) => {
-
-        const dot =
-            document.createElement("button");
-
-        dot.className = "gallery-dot";
-
-        dot.setAttribute(
-            "aria-label",
-            `Show gallery image ${index + 1}`
-        );
-
-        dot.addEventListener("click", () => {
-
-            goToSlide(index);
-
-            restartAutoplay();
-
-        });
-
-        dotsContainer.appendChild(dot);
-
-    });
-
-
-    const dots =
-        [...dotsContainer.querySelectorAll(".gallery-dot")];
-
-
-    /* =========================================
-       CALCULATE CENTER
-    ========================================= */
-
-    function getOffset(index) {
-
-        const card =
-            cards[index];
-
-        const viewportWidth =
-            viewport.clientWidth;
-
-        const cardCenter =
-            card.offsetLeft +
-            card.offsetWidth / 2;
-
-        return (
-            viewportWidth / 2 -
-            cardCenter
-        );
-
-    }
-
-
-    /* =========================================
-       GO TO SLIDE
-    ========================================= */
-
-    function goToSlide(index) {
-
-        currentIndex =
-            (index + cards.length) %
-            cards.length;
-
-
-        const offset =
-            getOffset(currentIndex);
-
-
-        track.style.transform =
-            `translate3d(${offset}px, 0, 0)`;
-
-
-        cards.forEach((card, i) => {
-
-            card.classList.toggle(
-                "active",
-                i === currentIndex
-            );
-
-        });
-
-
-        dots.forEach((dot, i) => {
-
-            dot.classList.toggle(
-                "active",
-                i === currentIndex
-            );
-
-        });
-
-    }
-
-
-    /* =========================================
-       CONTROLS
-    ========================================= */
-
-    next.addEventListener(
-        "click",
-        () => {
-
-            goToSlide(
-                currentIndex + 1
-            );
-
-            restartAutoplay();
-
-        }
-    );
-
-
-    prev.addEventListener(
-        "click",
-        () => {
-
-            goToSlide(
-                currentIndex - 1
-            );
-
-            restartAutoplay();
-
-        }
-    );
-
-
-    /* =========================================
-       AUTOPLAY
-    ========================================= */
-
-    function startAutoplay() {
-
-        clearInterval(autoplay);
-
-        autoplay =
-            setInterval(() => {
-
-                goToSlide(
-                    currentIndex + 1
-                );
-
-            }, 3500);
-
-    }
-
-
-    function restartAutoplay() {
-
-        clearInterval(autoplay);
-
-        startAutoplay();
-
-    }
-
-
-    /* =========================================
-       SWIPE
-    ========================================= */
-
-    let touchStart = 0;
-
-    viewport.addEventListener(
-        "touchstart",
-        (e) => {
-
-            touchStart =
-                e.changedTouches[0].screenX;
-
-            clearInterval(autoplay);
-
-        },
-        { passive: true }
-    );
-
-
-    viewport.addEventListener(
-        "touchend",
-        (e) => {
-
-            const touchEnd =
-                e.changedTouches[0].screenX;
-
-            const distance =
-                touchStart - touchEnd;
-
-
-            if (Math.abs(distance) > 45) {
-
-                if (distance > 0) {
-
-                    goToSlide(
-                        currentIndex + 1
-                    );
-
-                } else {
-
-                    goToSlide(
-                        currentIndex - 1
-                    );
-
-                }
-
-            }
-
-            startAutoplay();
-
-        },
-        { passive: true }
-    );
-
-
-    /* =========================================
-       RESIZE
-    ========================================= */
-
-    window.addEventListener(
-        "resize",
-        () => {
-
-            goToSlide(currentIndex);
-
-        }
-    );
-
-
-    /* =========================================
-       INITIALIZE
-    ========================================= */
-
-    goToSlide(0);
-
-    startAutoplay();
-
-});

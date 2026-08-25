@@ -39,6 +39,8 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="home">
+        <div class="trust-pill h1-pill"><i class="fa-solid fa-shield-heart"></i> Trusted by 10,000+ clients · UK 🇬🇧
+                    &amp; Canada 🇨🇦</div>
         <div class="hero-bg"></div>
         <svg class="orbit-svg" viewBox="0 0 640 640" fill="none">
             <circle cx="320" cy="320" r="300" stroke="#C9A15A" stroke-opacity="0.18" />
@@ -50,7 +52,7 @@
         </svg>
         <div class="wrap">
             <div class="hero-copy">
-                <div class="trust-pill"><i class="fa-solid fa-shield-heart"></i> Trusted by 10,000+ clients · UK 🇬🇧
+                <div class="trust-pill h2-pill"><i class="fa-solid fa-shield-heart"></i> Trusted by 10,000+ clients · UK 🇬🇧
                     &amp; Canada 🇨🇦</div>
                 <h1>Guiding Hearts Back to <em>Love, Clarity &amp; Peace</em></h1>
                 <p class="lead">Acharya Guru Ji offers confidential, one-to-one relationship consultation for breakup,
@@ -69,18 +71,38 @@
                     <div><span class="num">24 / 7</span><span class="lbl">Availability</span></div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="badge-corner"><i class="fa-solid fa-award"></i> Bharat Shreshtha Ratna 2025</div>
-                <div class="hero-photo-card">
-                    <!-- <div class="ph-inner"><i class="fa-solid fa-image"></i><span>Add Acharya Guru Ji's main photograph here<br><small>(replace .ph-inner with &lt;img class="real"&gt;)</small></span></div> -->
-                    <img class="real" src="../assets//gallery//WhatsApp Image 2026-04-25 at 11.56.47 PM.jpg"
-                        alt="Acharya Guru Ji, relationship consultant">
+            <!-- <div class="hero-visual"> -->
+            <!-- <div class="mentor-visual"> -->
+            <div class="mentor-main">
+                <div class="hero-carousel-ctnr">
+                    <div class="gallery-carousel">
+                        <button class="gallery-control gallery-prev" id="galleryPrev" aria-label="Previous image">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <div class="gallery-viewport">
+                            <div class="gallery-track" id="galleryTrack"></div>
+                        </div>
+                        <button class="gallery-control gallery-next" id="galleryNext" aria-label="Next image">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="gallery-dots" id="galleryDots"></div>
                 </div>
-                <div class="float-card">
-                    <div class="t">Verified Relationship Consultant</div>
-                    <div class="s">100% Confidential · GDPR &amp; PIPEDA compliant</div>
+
+                <div class="selector-row">
+                    <div class="selector-card active" data-img="">
+                        <div class="thumb"><i class="fa-solid fa-hands-praying"></i><img src=""></div>
+                        <div class="lbl"><b>Namaste</b><span>Meet Guru Ji</span></div>
+                    </div>
+                    <div class="selector-card" data-img="">
+                        <div class="thumb"><i class="fa-solid fa-award"></i><img src=""></div>
+                        <div class="lbl"><b>Recognition</b><span>Shreshtha</span></div>
+                    </div>
                 </div>
             </div>
+
+            <!-- </div> -->
+            <!-- </div> -->
         </div>
     </section>
 
@@ -174,13 +196,13 @@
                 <div class="mentor-main">
                     <!-- <div class="ph-inner"><i class="fa-solid fa-user-large"></i><span>Main profile photograph<br><small>swap in a genuine photo of Acharya Guru Ji</small></span></div> -->
                     <img class="real" id="mentorMainImg"
-                        src="../assets//gallery/WhatsApp Image 2026-04-25 at 11.56.47 PM.jpg" alt="Acharya Guru Ji">
+                        src="./assets/astrologer-hero.jpg" alt="Acharya Guru Ji">
                     <div class="tag">
                         <div class="t">Relationship Consultant &amp; Love Specialist</div>
                         <div class="s">Warm, confidential guidance — UK, Canada &amp; USA</div>
                     </div>
                 </div>
-                <div class="selector-row">
+                <!-- <div class="selector-row">
                     <div class="selector-card active" data-img="">
                         <div class="thumb"><i class="fa-solid fa-hands-praying"></i><img src=""></div>
                         <div class="lbl"><b>Namaste</b><span>Meet Guru Ji</span></div>
@@ -189,7 +211,7 @@
                         <div class="thumb"><i class="fa-solid fa-award"></i><img src=""></div>
                         <div class="lbl"><b>Recognition</b><span>Shreshtha</span></div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="mentor-content">
                 <div class="verify"><i class="fa-solid fa-circle-check"></i> Verified Relationship Consultant &amp;
@@ -219,80 +241,6 @@
                 </div>
                 <a class="btn btn-primary" data-wa="bare" target="_blank" rel="noopener"><i
                         class="fa-brands fa-whatsapp"></i> Consult Guru Ji</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============= Gallery =============== -->
-    <section id="gallery">
-        <div class="wrap">
-
-            <div class="sec-head center">
-                <div class="eyebrow" style="justify-content:center;">
-                    Moments & Memories
-                </div>
-
-                <h2>Glimpses From The Journey</h2>
-
-                <p>
-                    A collection of memorable moments and experiences.
-                </p>
-            </div>
-
-            <div class="gallery-carousel">
-
-                <button class="gallery-control gallery-prev" id="galleryPrev" aria-label="Previous image">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div class="gallery-viewport">
-                    <div class="gallery-track" id="galleryTrack"></div>
-                </div>
-
-                <button class="gallery-control gallery-next" id="galleryNext" aria-label="Next image">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-            </div>
-
-            <div class="gallery-dots" id="galleryDots"></div>
-
-        </div>
-    </section>
-
-    <!-- ============ PROCESS ============ -->
-    <section id="process">
-        <div class="wrap">
-            <div class="sec-head center">
-                <div class="eyebrow" style="justify-content:center;">The Process</div>
-                <h2>How the Consultation Works</h2>
-                <p>A simple, private path from your first message to real clarity.</p>
-            </div>
-            <div class="process-list">
-                <div class="process-item">
-                    <div class="process-num">01</div>
-                    <div>
-                        <h4>Start on WhatsApp</h4>
-                        <p>Send a message and briefly explain what's going on. Every conversation stays completely
-                            private.</p>
-                    </div>
-                </div>
-                <div class="process-item">
-                    <div class="process-num">02</div>
-                    <div>
-                        <h4>Share Your Situation</h4>
-                        <p>Guru Ji listens to the full picture — your relationship history, the current conflict and
-                            what you're hoping for.</p>
-                    </div>
-                </div>
-                <div class="process-item">
-                    <div class="process-num">03</div>
-                    <div>
-                        <h4>Get Personalised Guidance</h4>
-                        <p>Receive a clear, practical plan for your next step — built around your specific
-                            circumstances, not generic advice.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -332,6 +280,70 @@
                 <div class="rev-nav">
                     <button aria-label="Scroll left" id="quoteLeft"><i class="fa-solid fa-chevron-left"></i></button>
                     <button aria-label="Scroll right" id="quoteRight"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= Gallery =============== -->
+    <!-- <section id="gallery">
+        <div class="wrap">
+            <div class="sec-head center">
+                <div class="eyebrow" style="justify-content:center;">
+                    Moments & Memories
+                </div>
+                <h2>Glimpses From The Journey</h2>
+                <p>
+                    A collection of memorable moments and experiences.
+                </p>
+            </div>
+            <div class="gallery-carousel">
+                <button class="gallery-control gallery-prev" id="galleryPrev" aria-label="Previous image">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="gallery-viewport">
+                    <div class="gallery-track" id="galleryTrack"></div>
+                </div>
+                <button class="gallery-control gallery-next" id="galleryNext" aria-label="Next image">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-dots" id="galleryDots"></div>
+        </div>
+    </section> -->
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process">
+        <div class="wrap">
+            <div class="sec-head center">
+                <div class="eyebrow" style="justify-content:center;">The Process</div>
+                <h2>How the Consultation Works</h2>
+                <p>A simple, private path from your first message to real clarity.</p>
+            </div>
+            <div class="process-list">
+                <div class="process-item">
+                    <div class="process-num">01</div>
+                    <div>
+                        <h4>Start on WhatsApp</h4>
+                        <p>Send a message and briefly explain what's going on. Every conversation stays completely
+                            private.</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="process-num">02</div>
+                    <div>
+                        <h4>Share Your Situation</h4>
+                        <p>Guru Ji listens to the full picture — your relationship history, the current conflict and
+                            what you're hoping for.</p>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div class="process-num">03</div>
+                    <div>
+                        <h4>Get Personalised Guidance</h4>
+                        <p>Receive a clear, practical plan for your next step — built around your specific
+                            circumstances, not generic advice.</p>
+                    </div>
                 </div>
             </div>
         </div>
